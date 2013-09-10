@@ -12,13 +12,9 @@
 
 // Use this to show the modal view (pops-up from the bottom)
 - (void) presentSemiModalViewController:(TDSemiModalViewController*)vc {
-    [self presentSemiModalViewController:vc inView:UIApplication.sharedApplication.delegate.window.rootViewController.view];
-}
-
-- (void) presentSemiModalViewController:(TDSemiModalViewController*)vc inView:(UIView *)rootView {
-
 	UIView* modalView = vc.view;
 	UIView* coverView = vc.coverView;
+    UIView *rootView = UIApplication.sharedApplication.delegate.window.rootViewController.view;
     
 	coverView.frame = rootView.bounds;
     coverView.alpha = 0.0f;
@@ -68,7 +64,7 @@
 -(CGPoint) offscreenCenter {
     CGPoint offScreenCenter = CGPointZero;
     
-    UIInterfaceOrientation orientation = [[UIDevice currentDevice] orientation];
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
     CGSize offSize = UIScreen.mainScreen.bounds.size;
     
 	if(orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {

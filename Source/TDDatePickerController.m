@@ -9,12 +9,12 @@
 
 
 @implementation TDDatePickerController
-@synthesize datePicker, delegate;
+@synthesize datePicker, delegate, initalDate;
 
 -(void)viewDidLoad {
     [super viewDidLoad];
 
-	datePicker.date = [NSDate date];
+    datePicker.date = self.initalDate;
 
 	// we need to set the subview dimensions or it will not always render correctly
 	// http://stackoverflow.com/questions/1088163
@@ -62,7 +62,6 @@
 }
 
 - (void)viewDidUnload {
-    [self setToolbar:nil];
     [super viewDidUnload];
 
 	self.datePicker = nil;

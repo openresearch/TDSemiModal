@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) IBOutlet id delegate;
 @property (nonatomic, strong) IBOutlet UIDatePicker* datePicker;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (nonatomic, retain) NSDate* initalDate;
 
 -(IBAction)saveDateEdit:(id)sender;
 -(IBAction)clearDateEdit:(id)sender;
